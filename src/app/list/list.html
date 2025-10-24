@@ -1,0 +1,10 @@
+ <div>
+  <h1 class="display-1">Welcome to Our Application</h1>
+  <h2 class="highlight"> Coffee Shop</h2>
+  <p>This is a simple coffee shop application built with Angular.</p>
+  <p class="highlight">We offer a variety of coffee from different regions:</p>
+  <ul class="list-group">
+    <li *ngFor="let region of coffeeRegions;" [id]="region.id" [class]="['list-group-item', region.id]">{{ region.name }}</li>
+  </ul>
+  <button *ngIf="mostrarBoton()" class="btn btn-primary mt-3">Explore More</button>
+</div>
