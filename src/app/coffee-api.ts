@@ -21,10 +21,10 @@ export class CoffeeApi {
   createCoffee(coffee: any): Observable<Coffee> {
     return this.http.post<Coffee>(`${this.baseUrl}/coffees`, coffee);
   }
-  // // Update a coffee
-  // updateCoffee(id: number, coffee: any): Observable<any> {
-  //   return this.http.put(`${this.baseUrl}/coffees/${id}`, coffee);
-  // }
+  // Update a coffee
+  updateCoffee(id: number, coffee: any): Observable<any> {
+    return this.http.patch(`${this.baseUrl}/coffees/${id}`, coffee);
+  }
   // Delete a coffee
   deleteCoffee(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/coffees/${id}`);
