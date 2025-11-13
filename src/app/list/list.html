@@ -1,10 +1,39 @@
  <div>
-  <h1 class="display-1">Welcome to Our Application</h1>
-  <h2 class="highlight"> Coffee Shop</h2>
-  <p>This is a simple coffee shop application built with Angular.</p>
-  <p class="highlight">We offer a variety of coffee from different regions:</p>
+  <!-- <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+  <!-- Create Form -->
+   <div class="border border-primary">
+    <form (ngSubmit)="onSubmit(coffeeForm)" #coffeeForm="ngForm" class="p-3">
+      <div class="mb-3">
+      <label for="name" class="form-label">Coffee Name:</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required />
+      </div>
+
+      <div class="mb-3">
+      <label for="origin" class="form-label">Origin:</label>
+      <input type="text" class="form-control" id="origin" name="origin" [(ngModel)]="origin" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add Coffee</button>
+    </form>
+  </div>
+
+  <h1>Coffee List</h1>
   <ul class="list-group">
-    <li *ngFor="let region of coffeeRegions;" [id]="region.id" [class]="['list-group-item', region.id]">{{ region.name }}</li>
+    <li *ngFor="let coffee of coffees;" [id]="coffee.id" [class]="['list-group-item', coffee.id]">{{ coffee.name }} ({{ coffee.origin }}) <button (click)="deleteCoffee(coffee.id)" class="btn btn-danger btn-sm float-end">Delete</button></li>
   </ul>
-  <button *ngIf="mostrarBoton()" class="btn btn-primary mt-3">Explore More</button>
 </div>
