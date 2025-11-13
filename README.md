@@ -3,7 +3,7 @@
 ## Dependencias
 Tenes que tener andando la [coffee-shop-api](https://github.com/Unicen-Tuari/coffee-shop-api)
 
-Pasos
+### Pasos
 ```
 git clone https://github.com/Unicen-Tuari/coffee-shop-api.git
 cd coffee-shop-api
