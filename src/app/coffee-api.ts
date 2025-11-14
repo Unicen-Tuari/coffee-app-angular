@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Coffee } from './coffee';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoffeeApi {
-  private baseUrl = 'http://localhost:3000'; // Coffee API base URL
+  private baseUrl = environment.apiUrl;
   constructor(private http: HttpClient) {}
   // Get all coffees
   getCoffees(): Observable<Coffee[]> {
